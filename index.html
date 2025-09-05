@@ -9,6 +9,38 @@
 		<script src="https://cdn.staticfile.net/twitter-bootstrap/5.1.1/js/bootstrap.bundle.min.js"></script>
 		
 		<meta name="viewport" content="width=device-width,initial-scale=1"/>
+		<script>
+			function calc(){
+				sal=document.getElementById("salary").value;
+				salnum=parseInt(sal);
+				ylp=salnum*0.08;
+				ylc=salnum*0.2;
+				document.getElementById("ylp").innerText=ylp;
+				document.getElementById("ylc").innerText=ylc;
+				ybp=salnum*0.02;
+				ybc=salnum*0.06;
+				document.getElementById("ybp").innerText=ybp;
+				document.getElementById("ybc").innerText=ybc;
+				syp=salnum*0.005;
+				syc=salnum*0.015;
+				document.getElementById("syp").innerText=syp;
+				document.getElementById("syc").innerText=syc;
+				gsc=salnum*0.005;
+				document.getElementById("gsc").innerText=gsc;
+				sc=salnum*0.008;
+				document.getElementById("sc").innerText=sc;
+				gp=salnum*0.12;
+				gc=salnum*0.12;
+				document.getElementById("gp").innerText=gp;
+				document.getElementById("gc").innerText=gc;
+				s1=ylp+ybp+syp+gp;
+				s2=ylc+ybc+syc+gsc+sc+gc; 
+				s3=salnum+s2;
+				document.getElementById("s1").innerText=s1;
+				document.getElementById("s2").innerText=s2;
+				document.getElementById("s3").innerText=s3;
+			}
+		</script>
 	</head>
 	<body>
 		<div class="container text-center">
@@ -19,7 +51,7 @@
 					<td colspan="3">
 						<input type="text" class="form-control" id="salary" placeholder="请输入工资"/>
 					</td>
-					<td><button class="btn btn-danger" >计算</button></td>
+					<td><button class="btn btn-danger" onclick="calc()">计算</button></td>
 				</tr>
 				<tr class="bg-primary text-white">
 					<td>险种</td>
@@ -30,56 +62,56 @@
 				</tr>
 				<tr>
 					<td>养老</td>
-					<td>8%</td>
-					<td></td>
+					<td >8%</td>
+					<td id="ylp"></td>
 					<td>20%</td>
-					<td></td>
+					<td id="ylc"></td>
 				</tr>
 				<tr>
 					<td>医保</td>
 					<td>2%</td>
-					<td></td>
+					<td id="ybp"></td>
 					<td>6%</td>
-					<td></td>
+					<td id="ybc"></td>
 				</tr>
 				<tr>
 					<td>失业</td>
 					<td>0.5%</td>
-					<td></td>
+					<td id="syp"></td>
 					<td>1.5%</td>
-					<td></td>
+					<td id="syc"></td>
 				</tr>
 				<tr>
 					<td>工伤</td>
 					<td></td>
 					<td></td>
 					<td>0.5%</td>
-					<td></td>
+					<td id="gsc"></td>
 				</tr>
 				<tr>
 					<td>生育</td>
 					<td></td>
 					<td></td>
 					<td>0.8%</td>
-					<td></td>
+					<td id="sc"></td>
 				</tr> 
 				<tr>
 					<td>公积金</td>
 					<td>12%</td>
-					<td></td>
+					<td id="gp"></td>
 					<td>12%</td>
-					<td></td>
+					<td id="gc"></td>
 				</tr>
 				<tr>
 					<td>合计</td>
 					<td>个人合计</td>
-					<td></td>
+					<td id="s1"></td>
 					<td>公司合计</td>
-					<td></td>
+					<td id="s2"></td>
 				</tr>
 				<tr>
 					<td>总额</td>
-					<td colspan="4"></td>
+					<td id="s3" colspan="4"></td>
 				</tr>
 			</table>
 		</div>
